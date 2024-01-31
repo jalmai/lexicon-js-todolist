@@ -14,7 +14,7 @@ body {
   border-radius: 20px;
 }
 .todo-article {
-  max-width: 95%;
+  max-width: 80%;
   border: 2px solid black;
   border-radius: 20px;
   margin: 0 auto;

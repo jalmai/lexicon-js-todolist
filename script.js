@@ -5,21 +5,33 @@ class todoItem {
     this.timestamp = Date.now();
   }
 }
-let a = new todoItem("Detta är ett test", false, "2024-01-31 12:33");
 
 let form = document.querySelector(".new-todo");
 let itemList = document.querySelector(".todo-list");
 let descriptionItem = document.querySelector(".description");
-console.log(itemList);
+postExamples();
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let newTodo = new todoItem(descriptionItem.value);
+  postTodoItem(newTodo);
+});
+
+function postTodoItem(todoItem) {
   let art = document.createElement("article");
   art.setAttribute("class", "todo-article");
-  art.innerText = newTodo.description;
-  itemList.insertAdjacentElement("beforeend", art);
-});
-// let b = new todoItem("Detta är ett test 2", false, "2024-01-31 12:33");
-// let c = new todoItem("Detta är ett test 3", false, "2024-01-31 12:33");
-// let d = new todoItem("Detta är ett test 4", false, "2024-01-31 12:33");
-// let e = new todoItem("Detta är ett test 5", false, "2024-01-31 12:33");
+  art.innerText = todoItem.description;
+  itemList.insertAdjacentElement("afterbegin", art);
+}
+function postExamples() {
+  let a = new todoItem("Köpa nya fiskar, ty de gamla har tatt slut");
+  let b = new todoItem("Vattna sissusen");
+  let c = new todoItem("Samla alla kräftskal i en prydlig liten hög");
+  let d = new todoItem("Fixa dörren");
+  let e = new todoItem("Muta portvakten");
+  postTodoItem(a);
+  postTodoItem(b);
+  postTodoItem(c);
+  postTodoItem(d);
+  postTodoItem(e);
+}
