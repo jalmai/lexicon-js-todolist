@@ -9,6 +9,7 @@ class todoItem {
 let form = document.querySelector(".new-todo");
 let itemList = document.querySelector(".todo-list");
 let descriptionItem = document.querySelector(".description");
+
 postExamples();
 
 form.addEventListener("submit", (e) => {
@@ -20,8 +21,16 @@ form.addEventListener("submit", (e) => {
 function postTodoItem(todoItem) {
   let art = document.createElement("article");
   art.setAttribute("class", "todo-article");
-  art.innerHTML = `<input type="checkbox" /><p>${todoItem.description}<p>${todoItem.timestamp}</p>`;
+  art.innerHTML = `<input type="checkbox" /><p>${todoItem.description}<p>${todoItem.timestamp}</p><button type="submit" class="delete-button">TA BORT</submit>`;
   itemList.insertAdjacentElement("afterbegin", art);
+
+  let deleteButton = document.querySelector(".delete-button");
+  deleteButton.addEventListener("click", (e) => {
+    if (confirm("Vill du verkligen radera?")) {
+      console.log(e.srcElement);
+      e.srcElement.parentNode.remove();
+    }
+  });
 }
 function postExamples() {
   let a = new todoItem("Köpa nya fiskar, ty de gamla har tatt slut");

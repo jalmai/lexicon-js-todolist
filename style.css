@@ -20,3 +20,8 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+.delete-button {
+  background-color: red;
+  color: white;
+  float: right;
+}
