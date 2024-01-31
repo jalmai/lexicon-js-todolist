@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+
     <title>Todolist</title>
   </head>
   <body>
-    </section>
     <main>
-        
+      <section class="todo-list">
+        <h2>The acctual list</h2>
+        <form class="new-todo">
+          <label for="description">Description</label>
+          <input class="description" name="description" type="text" />
+          <button type="submit">Skapa ny todo</button>
+        </form>
+        <article class="todo-article">
+          <p>Example of a todo item</p>
+          <p>2024-03-01 23:11</p>
+        </article>
+      </section>
     </main>
     <section class="notes">
       <h2>User stories</h2>
@@ -60,5 +70,7 @@
         </li>
       </ul>
     </section>
+    <!-- ! FIX WINDOWS ONLOAD IN SCRIPT AND PLACE IN HEAD -->
+    <script src="script.js"></script>
   </body>
 </html>
