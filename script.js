@@ -2,7 +2,7 @@ class todoItem {
   constructor(description) {
     this.description = description;
     this.completed = false;
-    this.timestamp = Date.now();
+    this.timestamp = new Date();
   }
 }
 
@@ -20,7 +20,7 @@ form.addEventListener("submit", (e) => {
 function postTodoItem(todoItem) {
   let art = document.createElement("article");
   art.setAttribute("class", "todo-article");
-  art.innerText = todoItem.description;
+  art.innerHTML = `<input type="checkbox" /><p>${todoItem.description}<p>${todoItem.timestamp}</p>`;
   itemList.insertAdjacentElement("afterbegin", art);
 }
 function postExamples() {
