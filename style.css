@@ -1,0 +1,11 @@
+body {
+  max-width: 800px;
+  background-color: beige;
+  margin: 0 auto;
+}
+.notes {
+  margin-top: 200px;
+  padding: 50px;
+  width: 90%;
+  background-color: lightblue;
+}
